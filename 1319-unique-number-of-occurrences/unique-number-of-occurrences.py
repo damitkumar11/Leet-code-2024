@@ -1,14 +1,12 @@
-from collections import Counter
+class Solution:
+  def uniqueOccurrences(self, arr: List[int]) -> bool:
+    count = collections.Counter(arr)
+    occurrences = set()
 
-class Solution(object):
-    def uniqueOccurrences(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: bool
-        """
-        # Count occurrences of each value in the array
-        counts = Counter(arr)
-        
-        # Check if the counts are unique
-        return len(counts.values()) == len(set(counts.values()))
+    for value in count.values():
+      if value in occurrences:
+        return False
+      occurrences.add(value)
+
+    return True
         
