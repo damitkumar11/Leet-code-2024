@@ -11,4 +11,3 @@ class Solution:
       suffix[i] = suffix[i + 1] * nums[i + 1]
 
     return [prefix[i] * suffix[i] for i in range(n)]
-        
